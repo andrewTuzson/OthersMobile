@@ -79,7 +79,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eVz-9v-Us4" kind="show" id="6wn-fT-XfY"/>
+                                    <action selector="createAccountPressed:" destination="Lwd-c6-zfW" eventType="touchUpInside" id="Qlo-X3-RVT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-yV-ZdF">
@@ -573,7 +573,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEQ-7t-aZm">
-                                <rect key="frame" x="30" y="613" width="354" height="50"/>
+                                <rect key="frame" x="30" y="623" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PbK-pA-XIK"/>
@@ -607,7 +607,7 @@
                             <constraint firstItem="7x4-pd-rX7" firstAttribute="leading" secondItem="q1Y-do-Aqc" secondAttribute="leading" id="C8X-pX-KWH"/>
                             <constraint firstItem="YGL-hZ-RvR" firstAttribute="leading" secondItem="q1Y-do-Aqc" secondAttribute="leading" constant="30" id="Jvv-yX-QUi"/>
                             <constraint firstItem="CTz-4b-1a2" firstAttribute="top" secondItem="mD9-uE-CLJ" secondAttribute="bottom" constant="106" id="OSX-ka-3WQ"/>
-                            <constraint firstItem="ZN6-5j-Vj8" firstAttribute="top" secondItem="qEQ-7t-aZm" secondAttribute="bottom" constant="30" id="V44-U1-Kkn"/>
+                            <constraint firstItem="ZN6-5j-Vj8" firstAttribute="top" secondItem="qEQ-7t-aZm" secondAttribute="bottom" constant="20" id="V44-U1-Kkn"/>
                             <constraint firstItem="7x4-pd-rX7" firstAttribute="trailing" secondItem="q1Y-do-Aqc" secondAttribute="trailing" id="bxU-Gz-14r"/>
                             <constraint firstItem="YGL-hZ-RvR" firstAttribute="top" secondItem="29v-RT-EAP" secondAttribute="bottom" constant="20" id="do2-8O-maE"/>
                             <constraint firstItem="q1Y-do-Aqc" firstAttribute="trailing" secondItem="29v-RT-EAP" secondAttribute="trailing" constant="30" id="fEc-ck-Kgk"/>
@@ -620,7 +620,7 @@
                             <constraint firstItem="q1Y-do-Aqc" firstAttribute="trailing" secondItem="qEQ-7t-aZm" secondAttribute="trailing" constant="30" id="tzm-GV-vlm"/>
                             <constraint firstItem="CTz-4b-1a2" firstAttribute="leading" secondItem="q1Y-do-Aqc" secondAttribute="leading" constant="30" id="x6z-hR-T4a"/>
                             <constraint firstItem="29v-RT-EAP" firstAttribute="leading" secondItem="q1Y-do-Aqc" secondAttribute="leading" constant="30" id="xHc-wj-XNK"/>
-                            <constraint firstItem="qEQ-7t-aZm" firstAttribute="top" secondItem="YGL-hZ-RvR" secondAttribute="bottom" constant="20" id="zTC-Ul-sl7"/>
+                            <constraint firstItem="qEQ-7t-aZm" firstAttribute="top" secondItem="YGL-hZ-RvR" secondAttribute="bottom" constant="30" id="zTC-Ul-sl7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q1Y-do-Aqc"/>
                     </view>

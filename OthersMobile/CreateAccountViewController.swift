@@ -8,15 +8,31 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
-
+class CreateAccountViewController: UIViewController, UITextFieldDelegate {
+    
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
-        
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

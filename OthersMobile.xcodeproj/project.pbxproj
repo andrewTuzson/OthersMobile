@@ -15,9 +15,13 @@
 		8A86981B2025CDFF0089ADBD /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981A2025CDFF0089ADBD /* RootPageViewController.swift */; };
 		8A86981D2025DA3B0089ADBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981C2025DA3B0089ADBD /* LoginViewController.swift */; };
 		8A86981F2025DA430089ADBD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */; };
+		8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8698202026460F0089ADBD /* GoogleService-Info.plist */; };
+		D7C79A04ED3827EFC72189D6 /* Pods_OthersMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AFB421CC02542D62C6500AB /* Pods-OthersMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OthersMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile.release.xcconfig"; sourceTree = "<group>"; };
+		2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OthersMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8698052025CD9C0089ADBD /* OthersMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OthersMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8698082025CD9C0089ADBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A86980A2025CD9C0089ADBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		8A86981A2025CDFF0089ADBD /* RootPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
 		8A86981C2025DA3B0089ADBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		8A8698202026460F0089ADBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OthersMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C79A04ED3827EFC72189D6 /* Pods_OthersMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				8A8698072025CD9C0089ADBD /* OthersMobile */,
 				8A8698062025CD9C0089ADBD /* Products */,
+				C0B3040B6109768E66EA839A /* Pods */,
+				C02EAE2B6DADCDBC81B08D4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,9 +77,27 @@
 				8A86980C2025CD9C0089ADBD /* Main.storyboard */,
 				8A86980F2025CD9C0089ADBD /* Assets.xcassets */,
 				8A8698112025CD9C0089ADBD /* LaunchScreen.storyboard */,
+				8A8698202026460F0089ADBD /* GoogleService-Info.plist */,
 				8A8698142025CD9C0089ADBD /* Info.plist */,
 			);
 			path = OthersMobile;
+			sourceTree = "<group>";
+		};
+		C02EAE2B6DADCDBC81B08D4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0B3040B6109768E66EA839A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */,
+				0AFB421CC02542D62C6500AB /* Pods-OthersMobile.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A8698172025CD9C0089ADBD /* Build configuration list for PBXNativeTarget "OthersMobile" */;
 			buildPhases = (
+				FDB0D735AB70E11271B1320F /* [CP] Check Pods Manifest.lock */,
 				8A8698012025CD9C0089ADBD /* Sources */,
 				8A8698022025CD9C0089ADBD /* Frameworks */,
 				8A8698032025CD9C0089ADBD /* Resources */,
+				B2C9F7303DB7E580D6C5B509 /* [CP] Embed Pods Frameworks */,
+				464C3FB923A645895D911997 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,12 +163,71 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A8698132025CD9C0089ADBD /* LaunchScreen.storyboard in Resources */,
+				8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */,
 				8A8698102025CD9C0089ADBD /* Assets.xcassets in Resources */,
 				8A86980E2025CD9C0089ADBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		464C3FB923A645895D911997 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2C9F7303DB7E580D6C5B509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDB0D735AB70E11271B1320F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OthersMobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A8698012025CD9C0089ADBD /* Sources */ = {
@@ -284,6 +373,7 @@
 		};
 		8A8698182025CD9C0089ADBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +389,7 @@
 		};
 		8A8698192025CD9C0089ADBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AFB421CC02542D62C6500AB /* Pods-OthersMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -35,4 +35,14 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        view.frame.origin.y -= 300
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        view.frame.origin.y += 300
+        return true
+    }
+    
 }

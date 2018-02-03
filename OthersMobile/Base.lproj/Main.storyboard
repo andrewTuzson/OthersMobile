@@ -422,7 +422,7 @@
             </objects>
             <point key="canvasLocation" x="494" y="1223"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="UHY-jJ-enj">
             <objects>
                 <viewController id="Acw-0f-hx0" sceneMemberID="viewController">
@@ -432,13 +432,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kyM-t1-VDX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="t5l-Zm-ADN"/>
+                    <tabBarItem key="tabBarItem" title="" image="search2" selectedImage="search4" id="t5l-Zm-ADN">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-2"/>
+                        <color key="badgeColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpj-7J-ViN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="136"/>
+            <point key="canvasLocation" x="2439" y="525"/>
         </scene>
-        <!--Item 1-->
+        <!--View Controller-->
         <scene sceneID="7Nz-IP-PAK">
             <objects>
                 <viewController id="tMv-5m-TRa" sceneMemberID="viewController">
@@ -448,11 +451,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="api-9v-cKP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="hjz-MS-zkl"/>
+                    <tabBarItem key="tabBarItem" title="" image="home2" selectedImage="home4" id="hjz-MS-zkl">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-2"/>
+                        <color key="badgeColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhW-ie-iId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="-539"/>
+            <point key="canvasLocation" x="1748" y="525"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3bo-pC-GLu">
@@ -462,15 +468,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.23529411764705882" green="0.23137254901960785" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="tMv-5m-TRa" kind="relationship" relationship="viewControllers" id="ig1-bf-qGX"/>
                         <segue destination="Acw-0f-hx0" kind="relationship" relationship="viewControllers" id="4nI-Pc-p3G"/>
+                        <segue destination="obn-0q-0QO" kind="relationship" relationship="viewControllers" id="hlT-2d-VcK"/>
+                        <segue destination="KMo-b6-K2o" kind="relationship" relationship="viewControllers" id="I2M-11-kc3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L19-Ig-RVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1267" y="-196"/>
+            <point key="canvasLocation" x="1748" y="-196"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CqX-RO-KKD">
+            <objects>
+                <viewController id="obn-0q-0QO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GNg-RZ-Opb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zML-Rt-Xq6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="newSpot2" selectedImage="newSpot4" id="Oly-fb-e60">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-2"/>
+                        <color key="badgeColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ZM-tO-VS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3145" y="525"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GXw-Nk-AV2">
+            <objects>
+                <viewController id="KMo-b6-K2o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffc-o0-J6M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uNX-mu-rbV"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="profile2" selectedImage="profile4" id="tQ8-Oj-2PP">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-2"/>
+                        <color key="badgeColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0A-sx-bCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3861" y="525"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="eIi-H0-hAK">
@@ -507,7 +554,7 @@
                                     <constraint firstAttribute="height" constant="197" id="aUM-Ar-yN7"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" background="3c3b38" translatesAutoresizingMaskIntoConstraints="NO" id="29v-RT-EAP">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" background="3c3b38" translatesAutoresizingMaskIntoConstraints="NO" id="29v-RT-EAP">
                                 <rect key="frame" x="30" y="493" width="354" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hdV-HF-eFZ"/>
@@ -516,7 +563,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="3c3b38" translatesAutoresizingMaskIntoConstraints="NO" id="YGL-hZ-RvR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="3c3b38" translatesAutoresizingMaskIntoConstraints="NO" id="YGL-hZ-RvR">
                                 <rect key="frame" x="30" y="553" width="354" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QTh-Ng-mGd"/>
@@ -589,8 +636,14 @@
     </scenes>
     <resources>
         <image name="3c3b38" width="16" height="16"/>
+        <image name="home2" width="30" height="30"/>
+        <image name="home4" width="30" height="30"/>
         <image name="logo" width="250" height="88"/>
+        <image name="newSpot2" width="30" height="30"/>
+        <image name="newSpot4" width="30" height="30"/>
         <image name="nextButton" width="400" height="74"/>
+        <image name="profile2" width="30" height="30"/>
+        <image name="profile4" width="30" height="30"/>
         <image name="profileIcon2" width="500" height="500"/>
         <image name="screen1Boots" width="800" height="702"/>
         <image name="screen1Nav" width="196" height="50"/>
@@ -604,6 +657,8 @@
         <image name="screen4Boots" width="800" height="702"/>
         <image name="screen4Nav" width="196" height="50"/>
         <image name="screen4Title" width="400" height="74"/>
+        <image name="search2" width="30" height="30"/>
+        <image name="search4" width="30" height="30"/>
         <image name="skateWithOthers" width="400" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>

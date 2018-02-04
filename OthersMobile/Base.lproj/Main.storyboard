@@ -31,11 +31,11 @@
                                     <constraint firstAttribute="width" constant="240" id="2Ou-BB-49M"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-tU-gar">
-                                <rect key="frame" x="130" y="204" width="154" height="179"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-tU-gar">
+                                <rect key="frame" x="117.66666666666669" y="195" width="179" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="4qd-4G-FT7"/>
-                                    <constraint firstAttribute="width" constant="154" id="7rR-be-NrA"/>
+                                    <constraint firstAttribute="width" constant="179" id="7rR-be-NrA"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="3c3b38" translatesAutoresizingMaskIntoConstraints="NO" id="682-AO-pvw">
@@ -121,7 +121,7 @@
                             <constraint firstItem="jLz-JZ-jdU" firstAttribute="centerX" secondItem="Ku6-CP-Q8K" secondAttribute="centerX" id="apx-Io-4oC"/>
                             <constraint firstItem="Z1S-tU-gar" firstAttribute="centerX" secondItem="Ku6-CP-Q8K" secondAttribute="centerX" id="eLi-tE-rFq"/>
                             <constraint firstItem="RLR-fj-Pys" firstAttribute="top" secondItem="682-AO-pvw" secondAttribute="bottom" constant="20" id="g1r-2R-q7S"/>
-                            <constraint firstItem="Z1S-tU-gar" firstAttribute="top" secondItem="jLz-JZ-jdU" secondAttribute="bottom" constant="54" id="hPR-OF-l68"/>
+                            <constraint firstItem="Z1S-tU-gar" firstAttribute="top" secondItem="jLz-JZ-jdU" secondAttribute="bottom" constant="45" id="hPR-OF-l68"/>
                             <constraint firstItem="kD3-AN-wRE" firstAttribute="top" secondItem="jLz-JZ-jdU" secondAttribute="bottom" constant="228" id="hmi-Ke-ZNe"/>
                             <constraint firstItem="kD3-AN-wRE" firstAttribute="centerX" secondItem="Ku6-CP-Q8K" secondAttribute="centerX" id="qOp-8z-Fc9"/>
                             <constraint firstItem="156-ZX-Prt" firstAttribute="leading" secondItem="6Ko-YW-kRd" secondAttribute="leading" constant="30" id="vWg-3L-wYv"/>
@@ -130,8 +130,10 @@
                         <viewLayoutGuide key="safeArea" id="6Ko-YW-kRd"/>
                     </view>
                     <connections>
+                        <outlet property="createAccountButton" destination="vHk-c6-iQq" id="owZ-xy-Yic"/>
                         <outlet property="emailTextField" destination="682-AO-pvw" id="4rN-63-s6V"/>
                         <outlet property="passwordTextField" destination="156-ZX-Prt" id="tmC-cZ-ren"/>
+                        <outlet property="profileImageView" destination="Z1S-tU-gar" id="avQ-1F-6iA"/>
                         <outlet property="usernameTextField" destination="RLR-fj-Pys" id="xym-pi-deM"/>
                     </connections>
                 </viewController>

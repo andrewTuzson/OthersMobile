@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     
@@ -41,22 +42,26 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Move view up when user enters texts
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        view.frame.origin.y -= 300
+        view.frame.origin.y -= 250
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        view.frame.origin.y += 300
+        view.frame.origin.y += 250
         return true
     }
     
     @IBAction func createAccountPressed(_ sender: Any) {
-        Auth.auth().createUser(withEmail: "test1@gmail.com", password: "Heruka123!") { (user: User?, error: Error?) in
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user: User?, error: Error?) in
             if error != nil {
                 print(error?.localizedDescription)
                 return
             }
-            print(user)
+            let ref = Database.database().reference()
+            let userReference = ref.child("users")
+            let uid = user?.uid
+            let newUserReference = userReference.child(uid!)
+            newUserReference.setValue(["Username" : self.usernameTextField.text!, "Email" : self.emailTextField.text!])
         }
     }
     

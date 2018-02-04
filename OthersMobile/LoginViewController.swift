@@ -40,12 +40,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Move view up when user enters text
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        view.frame.origin.y -= 300
+        view.frame.origin.y -= 250
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        view.frame.origin.y += 300
+        view.frame.origin.y += 250
         return true
     }
     

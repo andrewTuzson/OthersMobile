@@ -36,18 +36,31 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.handleSelectProfileImageView))
         profileImageView.addGestureRecognizer(tapGesture)
         profileImageView.isUserInteractionEnabled = true
+        
+        // Configure and disable Create Account button until fields are complete
+        createAccountButton.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.84, alpha:1.0)
+        createAccountButton.isEnabled = false
+        setRequiredFields()
     }
     
-    // Disable Create Account button unless all fields are completed
+    // MARK: Disable Create Account button unless all fields are completed
     func setRequiredFields() {
-        if emailTextField == nil || usernameTextField == nil || passwordTextField == nil || profileImageView.image == #imageLiteral(resourceName: "profileIcon2") {
-            createAccountButton.isEnabled = false
-        } else {
-            createAccountButton.isEnabled = true
-        }
+        emailTextField.addTarget(self, action: #selector(CreateAccountViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        usernameTextField.addTarget(self, action: #selector(CreateAccountViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(CreateAccountViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
-    // Handle profile image tap gestures
+    @objc func textFieldDidChange() {
+        guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            createAccountButton.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.84, alpha:1.0)
+            createAccountButton.isEnabled = false
+            return
+        }
+        createAccountButton.backgroundColor = UIColor(red:0.19, green:0.19, blue:0.17, alpha:1.0)
+        createAccountButton.isEnabled = true
+    }
+    
+    // MARK: Handle profile image tap gestures
     @objc func handleSelectProfileImageView() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -100,13 +113,20 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                     
                     // Push user to database
                     let profileImageURL = metadata?.downloadURL()?.absoluteString
-                    let ref = Database.database().reference()
-                    let userReference = ref.child("users")
-                    let newUserReference = userReference.child(uid!)
-                    newUserReference.setValue(["Username" : self.usernameTextField.text!, "Email" : self.emailTextField.text!, "profileImageURL" : profileImageURL])
+                    self.setUserInformation(profileImageURL: profileImageURL!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
                 })
             }
         }
+    }
+    
+    // Push new user information to database
+    // Present onboard screen upon completion
+    func setUserInformation(profileImageURL: String, username: String, email: String, uid: String) {
+        let ref = Database.database().reference()
+        let userReference = ref.child("users")
+        let newUserReference = userReference.child(uid)
+        newUserReference.setValue(["Username" : username, "Email" : email, "profileImageURL" : profileImageURL])
+        performSegue(withIdentifier: "createAccountToPageViewControllerSegue", sender: nil)
     }
     
 }

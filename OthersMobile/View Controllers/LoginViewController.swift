@@ -32,6 +32,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         setRequiredFields()
         signInButton.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.84, alpha:1.0)
         signInButton.isEnabled = false
+        
+    }
+    
+    // Auto login user is creds are saved on device 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "loginToTabBarControllerSegue", sender: nil)
+        }
     }
     
     // MARK: Disable Create Account button unless all fields are completed
@@ -89,15 +98,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: IBActions
     @IBAction func signInButtonPressed(_ sender: Any) {
-        
-        Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-                return
-            }
+        AuthServices.signIn(email: usernameTextField.text!, password: passwordTextField.text!, onSuccess: {
             self.performSegue(withIdentifier: "loginToTabBarControllerSegue", sender: nil)
-        }
-        
+        }, onError: { error in
+            print(error!)
+        })
     }
     
     

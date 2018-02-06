@@ -428,7 +428,7 @@
         <!--Spot Search-->
         <scene sceneID="UHY-jJ-enj">
             <objects>
-                <viewController id="Acw-0f-hx0" sceneMemberID="viewController">
+                <viewController id="Acw-0f-hx0" customClass="SearchViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Guh-TX-aDh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -445,7 +445,7 @@
         <!--Feed-->
         <scene sceneID="7Nz-IP-PAK">
             <objects>
-                <viewController id="tMv-5m-TRa" sceneMemberID="viewController">
+                <viewController id="tMv-5m-TRa" customClass="FeedViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2DG-dW-hXG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,7 +484,7 @@
         <!--Add a Spot-->
         <scene sceneID="CqX-RO-KKD">
             <objects>
-                <viewController id="obn-0q-0QO" sceneMemberID="viewController">
+                <viewController id="obn-0q-0QO" customClass="AddSpotViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GNg-RZ-Opb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -501,7 +501,7 @@
         <!--Profile-->
         <scene sceneID="GXw-Nk-AV2">
             <objects>
-                <viewController id="KMo-b6-K2o" sceneMemberID="viewController">
+                <viewController id="KMo-b6-K2o" customClass="ProfileViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ffc-o0-J6M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -509,7 +509,14 @@
                         <color key="tintColor" red="0.098039215690000001" green="0.094117647060000004" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="uNX-mu-rbV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="stB-S4-xd3"/>
+                    <navigationItem key="navigationItem" title="Profile" id="stB-S4-xd3">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="fZP-wW-xSw">
+                            <color key="tintColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="KMo-b6-K2o" id="Ji4-TD-NPq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0A-sx-bCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -518,7 +525,7 @@
         <!--Login View Controller-->
         <scene sceneID="eIi-H0-hAK">
             <objects>
-                <viewController id="U0n-EZ-rgg" customClass="LoginViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreenVC" id="U0n-EZ-rgg" customClass="LoginViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uyc-OY-O2U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -748,6 +755,6 @@
         <image name="skateWithOthers" width="400" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lir-dU-PWe"/>
+        <segue reference="kGS-Be-MHb"/>
     </inferredMetricsTieBreakers>
 </document>

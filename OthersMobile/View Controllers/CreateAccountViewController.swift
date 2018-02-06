@@ -95,38 +95,15 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createAccountPressed(_ sender: Any) {
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user: User?, error: Error?) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            // Store profile image in Firebase storage
-            let uid = user?.uid
-            let storageRef = Storage.storage().reference(forURL: "gs://others-mobile.appspot.com").child("profile_image").child((user?.uid)!)
-            
-            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-                storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
-                    if error != nil {
-                        return
-                    }
-                    
-                    // Push user to database
-                    let profileImageURL = metadata?.downloadURL()?.absoluteString
-                    self.setUserInformation(profileImageURL: profileImageURL!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
-                })
-            }
+        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            AuthServices.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                self.performSegue(withIdentifier: "createAccountToPageViewControllerSegue", sender: nil)
+            }, onError: { (errorString) in
+                print(errorString!)
+            })
+        } else {
+            print("Profile image can't be empty")
         }
-    }
-    
-    // Push new user information to database
-    // Present onboard screen upon completion
-    func setUserInformation(profileImageURL: String, username: String, email: String, uid: String) {
-        let ref = Database.database().reference()
-        let userReference = ref.child("users")
-        let newUserReference = userReference.child(uid)
-        newUserReference.setValue(["Username" : username, "Email" : email, "profileImageURL" : profileImageURL])
-        performSegue(withIdentifier: "createAccountToPageViewControllerSegue", sender: nil)
     }
     
 }

@@ -98,10 +98,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: IBActions
     @IBAction func signInButtonPressed(_ sender: Any) {
+        ProgressHUD.show("Hold up...", interaction: false)
         AuthServices.signIn(email: usernameTextField.text!, password: passwordTextField.text!, onSuccess: {
+            ProgressHUD.showSuccess("Boom. Logged in.")
             self.performSegue(withIdentifier: "loginToTabBarControllerSegue", sender: nil)
         }, onError: { error in
-            print(error!)
+            ProgressHUD.showError(error!)
         })
     }
     

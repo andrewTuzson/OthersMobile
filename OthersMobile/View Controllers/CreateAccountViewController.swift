@@ -96,13 +96,15 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func createAccountPressed(_ sender: Any) {
         if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            ProgressHUD.show("Hold up...", interaction: false)
             AuthServices.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                ProgressHUD.showSuccess("Boom. Logged in.")
                 self.performSegue(withIdentifier: "createAccountToPageViewControllerSegue", sender: nil)
             }, onError: { (errorString) in
-                print(errorString!)
+                ProgressHUD.showError(errorString!)
             })
         } else {
-            print("Profile image can't be empty")
+            ProgressHUD.showError("Select a profile image.")
         }
     }
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A130C742029C9ED00FF504D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C732029C9ED00FF504D /* Config.swift */; };
+		8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C772029CF8200FF504D /* ProgressHUD.m */; };
+		8A130C7A2029CF8300FF504D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A130C782029CF8200FF504D /* ProgressHUD.bundle */; };
 		8A69F10320287FA90026FBFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10220287FA90026FBFC /* SearchViewController.swift */; };
 		8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10420287FB20026FBFC /* AddSpotViewController.swift */; };
 		8A69F10720287FB80026FBFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10620287FB80026FBFC /* ProfileViewController.swift */; };
@@ -28,6 +30,10 @@
 		0AFB421CC02542D62C6500AB /* Pods-OthersMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OthersMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile.release.xcconfig"; sourceTree = "<group>"; };
 		2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OthersMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A130C732029C9ED00FF504D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		8A130C752029CF8100FF504D /* OthersMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OthersMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A130C762029CF8200FF504D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		8A130C772029CF8200FF504D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		8A130C782029CF8200FF504D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		8A69F10220287FA90026FBFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8A69F10420287FB20026FBFC /* AddSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotViewController.swift; sourceTree = "<group>"; };
 		8A69F10620287FB80026FBFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				8A8698112025CD9C0089ADBD /* LaunchScreen.storyboard */,
 				8A8698202026460F0089ADBD /* GoogleService-Info.plist */,
 				8A8698142025CD9C0089ADBD /* Info.plist */,
+				8A130C782029CF8200FF504D /* ProgressHUD.bundle */,
+				8A130C762029CF8200FF504D /* ProgressHUD.h */,
+				8A130C772029CF8200FF504D /* ProgressHUD.m */,
+				8A130C752029CF8100FF504D /* OthersMobile-Bridging-Header.h */,
 			);
 			path = OthersMobile;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 				TargetAttributes = {
 					8A8698042025CD9C0089ADBD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -196,6 +207,7 @@
 				8A8698132025CD9C0089ADBD /* LaunchScreen.storyboard in Resources */,
 				8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */,
 				8A8698102025CD9C0089ADBD /* Assets.xcassets in Resources */,
+				8A130C7A2029CF8300FF504D /* ProgressHUD.bundle in Resources */,
 				8A86980E2025CD9C0089ADBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +285,7 @@
 				8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */,
 				8A86981B2025CDFF0089ADBD /* RootPageViewController.swift in Sources */,
 				8A86980B2025CD9C0089ADBD /* FeedViewController.swift in Sources */,
+				8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */,
 				8A69F10B2029B9E50026FBFC /* AuthServices.swift in Sources */,
 				8A130C742029C9ED00FF504D /* Config.swift in Sources */,
 				8A69F10720287FB80026FBFC /* ProfileViewController.swift in Sources */,
@@ -414,12 +427,15 @@
 			baseConfigurationReference = 9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4NYQ6YNPGA;
 				INFOPLIST_FILE = OthersMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolempirecreative.OthersMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OthersMobile/OthersMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -430,12 +446,14 @@
 			baseConfigurationReference = 0AFB421CC02542D62C6500AB /* Pods-OthersMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4NYQ6YNPGA;
 				INFOPLIST_FILE = OthersMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evolempirecreative.OthersMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OthersMobile/OthersMobile-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

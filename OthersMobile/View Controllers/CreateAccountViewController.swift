@@ -33,7 +33,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         profileImageView.clipsToBounds = true
         
         // Create tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.handleSelectProfileImageView))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))
         profileImageView.addGestureRecognizer(tapGesture)
         profileImageView.isUserInteractionEnabled = true
         
@@ -45,9 +45,9 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Disable Create Account button unless all fields are completed
     func setRequiredFields() {
-        emailTextField.addTarget(self, action: #selector(CreateAccountViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        usernameTextField.addTarget(self, action: #selector(CreateAccountViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(CreateAccountViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
+        usernameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
     @objc func textFieldDidChange() {
@@ -66,7 +66,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
-
+    
     // MARK: Return user to Login screen
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

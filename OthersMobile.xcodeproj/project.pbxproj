@@ -10,6 +10,7 @@
 		8A130C742029C9ED00FF504D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C732029C9ED00FF504D /* Config.swift */; };
 		8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C772029CF8200FF504D /* ProgressHUD.m */; };
 		8A130C7A2029CF8300FF504D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A130C782029CF8200FF504D /* ProgressHUD.bundle */; };
+		8A130C7E202B16F300FF504D /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C7D202B16F300FF504D /* AddPostViewController.swift */; };
 		8A69F10320287FA90026FBFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10220287FA90026FBFC /* SearchViewController.swift */; };
 		8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10420287FB20026FBFC /* AddSpotViewController.swift */; };
 		8A69F10720287FB80026FBFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10620287FB80026FBFC /* ProfileViewController.swift */; };
@@ -34,6 +35,7 @@
 		8A130C762029CF8200FF504D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		8A130C772029CF8200FF504D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		8A130C782029CF8200FF504D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		8A130C7D202B16F300FF504D /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		8A69F10220287FA90026FBFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8A69F10420287FB20026FBFC /* AddSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotViewController.swift; sourceTree = "<group>"; };
 		8A69F10620287FB80026FBFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				8A86981C2025DA3B0089ADBD /* LoginViewController.swift */,
 				8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */,
 				8A86981A2025CDFF0089ADBD /* RootPageViewController.swift */,
+				8A130C7D202B16F300FF504D /* AddPostViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				8A86981F2025DA430089ADBD /* CreateAccountViewController.swift in Sources */,
 				8A86981D2025DA3B0089ADBD /* LoginViewController.swift in Sources */,
 				8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */,
+				8A130C7E202B16F300FF504D /* AddPostViewController.swift in Sources */,
 				8A86981B2025CDFF0089ADBD /* RootPageViewController.swift in Sources */,
 				8A86980B2025CD9C0089ADBD /* FeedViewController.swift in Sources */,
 				8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */,

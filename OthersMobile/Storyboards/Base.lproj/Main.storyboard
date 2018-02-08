@@ -451,8 +451,30 @@
                     <view key="view" contentMode="scaleToFill" id="2DG-dW-hXG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lc-Oe-PXy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="44" id="Ggo-BR-3Gg">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ggo-BR-3Gg" id="mtk-yN-sfH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.23529411759999999" green="0.23137254900000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1Lc-Oe-PXy" secondAttribute="bottom" id="V3K-n8-Auk"/>
+                            <constraint firstItem="1Lc-Oe-PXy" firstAttribute="leading" secondItem="api-9v-cKP" secondAttribute="leading" id="Vni-rT-kgM"/>
+                            <constraint firstItem="1Lc-Oe-PXy" firstAttribute="top" secondItem="2DG-dW-hXG" secondAttribute="top" id="ZFo-mE-ide"/>
+                            <constraint firstItem="1Lc-Oe-PXy" firstAttribute="trailing" secondItem="api-9v-cKP" secondAttribute="trailing" id="nom-Az-En2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="api-9v-cKP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="Uaw-h3-Bnp">
@@ -463,10 +485,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="1Lc-Oe-PXy" id="p6r-ln-u7S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhW-ie-iId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="1224"/>
+            <point key="canvasLocation" x="1747.826086956522" y="1223.6413043478262"/>
         </scene>
         <!--Add Post-->
         <scene sceneID="Jo3-W9-Vvi">

@@ -24,6 +24,7 @@
 		8A86981D2025DA3B0089ADBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981C2025DA3B0089ADBD /* LoginViewController.swift */; };
 		8A86981F2025DA430089ADBD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */; };
 		8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8698202026460F0089ADBD /* GoogleService-Info.plist */; };
+		8ABD0357202CCB9A00BC7568 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABD0356202CCB9A00BC7568 /* Post.swift */; };
 		D7C79A04ED3827EFC72189D6 /* Pods_OthersMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		8A86981C2025DA3B0089ADBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8A8698202026460F0089ADBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8ABD0356202CCB9A00BC7568 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OthersMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				8A8698082025CD9C0089ADBD /* AppDelegate.swift */,
 				8A69F10A2029B9E50026FBFC /* AuthServices.swift */,
 				8A130C732029C9ED00FF504D /* Config.swift */,
+				8ABD0355202CCB8B00BC7568 /* Model */,
 				8A69F1082029B9840026FBFC /* View Controllers */,
 				8A69F1092029B9B30026FBFC /* Storyboards */,
 				8A86980F2025CD9C0089ADBD /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				8A130C752029CF8100FF504D /* OthersMobile-Bridging-Header.h */,
 			);
 			path = OthersMobile;
+			sourceTree = "<group>";
+		};
+		8ABD0355202CCB8B00BC7568 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8ABD0356202CCB9A00BC7568 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C02EAE2B6DADCDBC81B08D4C /* Frameworks */ = {
@@ -286,6 +297,7 @@
 				8A86981F2025DA430089ADBD /* CreateAccountViewController.swift in Sources */,
 				8A86981D2025DA3B0089ADBD /* LoginViewController.swift in Sources */,
 				8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */,
+				8ABD0357202CCB9A00BC7568 /* Post.swift in Sources */,
 				8A130C7E202B16F300FF504D /* AddPostViewController.swift in Sources */,
 				8A86981B2025CDFF0089ADBD /* RootPageViewController.swift in Sources */,
 				8A86980B2025CD9C0089ADBD /* FeedViewController.swift in Sources */,

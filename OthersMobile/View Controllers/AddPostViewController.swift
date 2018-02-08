@@ -15,6 +15,7 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postCaption: UITextView!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     var selectedImage: UIImage?
     
     override func viewDidLoad() {
@@ -23,7 +24,28 @@ class AddPostViewController: UIViewController {
         // Create tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
         postImage.addGestureRecognizer(tapGesture)
-        postImage.isUserInteractionEnabled = true
+        postImage.isUserInteractionEnabled = true        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handlePost()
+    }
+    
+    // Disable Share button unless valid image is selected
+    func handlePost() {
+        if selectedImage != nil {
+            self.shareButton.backgroundColor = UIColor(red:0.19, green:0.19, blue:0.17, alpha:1.0)
+            self.shareButton.isEnabled = true
+        } else {
+            self.shareButton.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.84, alpha:1.0)
+            self.shareButton.isEnabled = false
+        }
+    }
+    
+    // MARK: Dismiss keyboard when user taps anywhere on screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @objc func handleSelectPhoto() {
@@ -62,15 +84,30 @@ class AddPostViewController: UIViewController {
         let postsReference = ref.child("posts")
         let newPostID = postsReference.childByAutoId().key
         let newpostReference = postsReference.child(newPostID)
-        newpostReference.setValue(["photoURL": photoURL], withCompletionBlock: {
+        newpostReference.setValue(["photoURL": photoURL, "caption": postCaption.text!], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
             }
             ProgressHUD.showSuccess("Laced it")
+            self.clearPost()
         })
         
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        clearPost()
+    }
+    
+    // Reset fields and return user to the feed view controller
+    func clearPost() {
+        self.postCaption.text = ""
+        self.postImage.image = UIImage(named: "placeholderPhoto")
+        self.selectedImage = nil
+        self.navigationController?.popViewController(animated: true)
     }
     
 

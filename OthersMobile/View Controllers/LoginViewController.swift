@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    // Comment about stuff
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -36,12 +38,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Auto login user is creds are saved on device 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "loginToTabBarControllerSegue", sender: nil)
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "loginToTabBarControllerSegue", sender: nil)
+//        }
+//    }
     
     // MARK: Disable Create Account button unless all fields are completed
     func setRequiredFields() {

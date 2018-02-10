@@ -24,6 +24,7 @@
 		8A86981D2025DA3B0089ADBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981C2025DA3B0089ADBD /* LoginViewController.swift */; };
 		8A86981F2025DA430089ADBD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */; };
 		8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8698202026460F0089ADBD /* GoogleService-Info.plist */; };
+		8A890F25202F077300651499 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A890F24202F077300651499 /* TabBar.storyboard */; };
 		8ABD0357202CCB9A00BC7568 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABD0356202CCB9A00BC7568 /* Post.swift */; };
 		D7C79A04ED3827EFC72189D6 /* Pods_OthersMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		8A86981C2025DA3B0089ADBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8A8698202026460F0089ADBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A890F24202F077300651499 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8ABD0356202CCB9A00BC7568 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OthersMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 		8A69F1092029B9B30026FBFC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8A890F24202F077300651499 /* TabBar.storyboard */,
 				8A86980C2025CD9C0089ADBD /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -222,6 +225,7 @@
 				8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */,
 				8A8698102025CD9C0089ADBD /* Assets.xcassets in Resources */,
 				8A130C7A2029CF8300FF504D /* ProgressHUD.bundle in Resources */,
+				8A890F25202F077300651499 /* TabBar.storyboard in Resources */,
 				8A86980E2025CD9C0089ADBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

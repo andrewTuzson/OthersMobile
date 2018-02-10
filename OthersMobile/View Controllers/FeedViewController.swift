@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import SDWebImage
 
 class FeedViewController: UIViewController {
     
@@ -16,6 +17,11 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Dynamically set cell height. Doesn't work and I think it's my constraints?
+        // tableView.estimatedRowHeight = 521
+        // tableView.rowHeight = UITableViewAutomaticDimension
+        
         tableView.dataSource = self
         tableView.delegate = self
         loadPosts()
@@ -42,8 +48,9 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        cell.textLabel?.text = posts[indexPath.row].caption
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! FeedTableViewCell
+        let post = posts[indexPath.row]
+        cell.post = post
         return cell
     }
     

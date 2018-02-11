@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import SDWebImage
 
 class FeedTableViewCell: UITableViewCell {
     
@@ -24,14 +26,29 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
+    func setupUserInfo() {
+        if let uid = post?.uid {
+            Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: {
+                snapshot in
+                if let dict = snapshot.value as? [String: Any] {
+                    let user = UserModel.transformUser(dict: dict)
+                    self.nameLabel.text = user.username
+                    if let photoUrlString = user.profileImageUrl {
+                        let photoUrl = URL(string: photoUrlString)
+                        self.profileImageView.sd_setImage(with: photoUrl)
+                    }
+                }
+            })
+        }
+    }
+    
     func updateView() {
         captionLabel.text = post?.caption
-        profileImageView.image = UIImage(named: "andrew")
-        nameLabel.text = "andrewTuzson"
         if let photoUrlString = post?.photoURL {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
+        setupUserInfo()
     }
     
     override func awakeFromNib() {

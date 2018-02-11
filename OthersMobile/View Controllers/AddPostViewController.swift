@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
 
 class AddPostViewController: UIViewController {
     
@@ -84,7 +85,12 @@ class AddPostViewController: UIViewController {
         let postsReference = ref.child("posts")
         let newPostID = postsReference.childByAutoId().key
         let newpostReference = postsReference.child(newPostID)
-        newpostReference.setValue(["photoURL": photoURL, "caption": postCaption.text!], withCompletionBlock: {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        let currentUserId = currentUser.uid
+        
+        newpostReference.setValue(["uid": currentUserId, "photoURL": photoURL, "caption": postCaption.text!], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)

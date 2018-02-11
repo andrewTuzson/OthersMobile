@@ -26,19 +26,18 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
+    var user: UserModel? {
+        didSet {
+            setupUserInfo()
+        }
+    }
+    
     func setupUserInfo() {
-        if let uid = post?.uid {
-            Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: {
-                snapshot in
-                if let dict = snapshot.value as? [String: Any] {
-                    let user = UserModel.transformUser(dict: dict)
-                    self.nameLabel.text = user.username
-                    if let photoUrlString = user.profileImageUrl {
-                        let photoUrl = URL(string: photoUrlString)
-                        self.profileImageView.sd_setImage(with: photoUrl)
-                    }
-                }
-            })
+        nameLabel.text = user?.username
+        if let photoUrlString = user?.profileImageUrl {
+            let photoUrl = URL(string: photoUrlString)
+            profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "profileIcon2"))
+            
         }
     }
     
@@ -55,6 +54,13 @@ class FeedTableViewCell: UITableViewCell {
         super.awakeFromNib()
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
+        nameLabel.text = ""
+        captionLabel.text = ""
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profileImageView.image = UIImage(named: "profileIcon2")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

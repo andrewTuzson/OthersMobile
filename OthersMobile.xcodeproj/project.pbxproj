@@ -26,8 +26,11 @@
 		8A8698212026460F0089ADBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8698202026460F0089ADBD /* GoogleService-Info.plist */; };
 		8A890F25202F077300651499 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A890F24202F077300651499 /* TabBar.storyboard */; };
 		8A8B065C202F8343009AC291 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B065B202F8343009AC291 /* FeedTableViewCell.swift */; };
+		8AAE94B42032FB2000C954AE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE94B32032FB2000C954AE /* Comment.swift */; };
 		8ABD0357202CCB9A00BC7568 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABD0356202CCB9A00BC7568 /* Post.swift */; };
 		8AC74E86203062E40005E7BE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC74E85203062E40005E7BE /* UserModel.swift */; };
+		8AC74E882031A8840005E7BE /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC74E872031A8840005E7BE /* CommentViewController.swift */; };
+		8AC74E8A2031A8B00005E7BE /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC74E892031A8B00005E7BE /* CommentTableViewCell.swift */; };
 		D7C79A04ED3827EFC72189D6 /* Pods_OthersMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE392EDE15E1F5B481BEA9A /* Pods_OthersMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +60,11 @@
 		8A8698202026460F0089ADBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A890F24202F077300651499 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		8A8B065B202F8343009AC291 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		8AAE94B32032FB2000C954AE /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		8ABD0356202CCB9A00BC7568 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8AC74E85203062E40005E7BE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8AC74E872031A8840005E7BE /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		8AC74E892031A8B00005E7BE /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		9530A3080B03411418B356E3 /* Pods-OthersMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OthersMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OthersMobile/Pods-OthersMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,13 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				8A86980A2025CD9C0089ADBD /* FeedViewController.swift */,
+				8AC74E872031A8840005E7BE /* CommentViewController.swift */,
+				8A130C7D202B16F300FF504D /* AddPostViewController.swift */,
 				8A69F10220287FA90026FBFC /* SearchViewController.swift */,
 				8A69F10420287FB20026FBFC /* AddSpotViewController.swift */,
 				8A69F10620287FB80026FBFC /* ProfileViewController.swift */,
 				8A86981C2025DA3B0089ADBD /* LoginViewController.swift */,
 				8A86981E2025DA430089ADBD /* CreateAccountViewController.swift */,
 				8A86981A2025CDFF0089ADBD /* RootPageViewController.swift */,
-				8A130C7D202B16F300FF504D /* AddPostViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8A8B065B202F8343009AC291 /* FeedTableViewCell.swift */,
+				8AC74E892031A8B00005E7BE /* CommentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			children = (
 				8ABD0356202CCB9A00BC7568 /* Post.swift */,
 				8AC74E85203062E40005E7BE /* UserModel.swift */,
+				8AAE94B32032FB2000C954AE /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,8 +330,11 @@
 				8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */,
 				8ABD0357202CCB9A00BC7568 /* Post.swift in Sources */,
 				8A130C7E202B16F300FF504D /* AddPostViewController.swift in Sources */,
+				8AC74E8A2031A8B00005E7BE /* CommentTableViewCell.swift in Sources */,
+				8AAE94B42032FB2000C954AE /* Comment.swift in Sources */,
 				8A86981B2025CDFF0089ADBD /* RootPageViewController.swift in Sources */,
 				8A86980B2025CD9C0089ADBD /* FeedViewController.swift in Sources */,
+				8AC74E882031A8840005E7BE /* CommentViewController.swift in Sources */,
 				8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */,
 				8A8B065C202F8343009AC291 /* FeedTableViewCell.swift in Sources */,
 				8A69F10B2029B9E50026FBFC /* AuthServices.swift in Sources */,

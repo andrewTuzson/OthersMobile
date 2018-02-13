@@ -54,6 +54,11 @@ class FeedViewController: UIViewController {
             }
         })
     }
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "CommentSegue", sender: nil)
+    }
+    
 
 }
 

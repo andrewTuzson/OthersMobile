@@ -15,6 +15,8 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var sendCommentButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var constraintToBottom: NSLayoutConstraint!
+    
     let postId = "placeholder_reference"
     var comments = [Comment]()
     var users = [UserModel]()
@@ -25,10 +27,32 @@ class CommentViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // MARK: Set up notification center to handle moving the view when the keyboard is presented
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         sendCommentButton.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.84, alpha:1.0)
         sendCommentButton.isEnabled = false
         setRequiredFields()
         loadComments()
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        print(notification)
+        let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+        UIView.animate(withDuration: 0.3) {
+            self.constraintToBottom.constant = keyboardFrame!.height
+            self.view.layoutIfNeeded()
+            
+        }
+    }
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        UIView.animate(withDuration: 0.3) {
+            self.constraintToBottom.constant = 0
+            self.view.layoutIfNeeded()
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

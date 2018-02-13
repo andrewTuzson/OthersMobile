@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="-1655" y="525"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome One View Controller-->
         <scene sceneID="UNI-UN-ylJ">
             <objects>
-                <viewController storyboardIdentifier="onboardScreen1" id="KYE-2E-60r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardScreen1" id="KYE-2E-60r" customClass="WelcomeOneViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCf-Jf-NY8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,15 +212,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zUR-BG-zT1"/>
                     </view>
+                    <connections>
+                        <outlet property="swipeImageView" destination="5vn-dO-jfE" id="8BL-fV-5j3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7x-Jc-M8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1655" y="1224"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome Two View Controller-->
         <scene sceneID="3Dd-1l-H0d">
             <objects>
-                <viewController storyboardIdentifier="onboardScreen2" id="IdW-Pl-LrJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardScreen2" id="IdW-Pl-LrJ" customClass="WelcomeTwoViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LSt-yj-BEn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,15 +282,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YF7-Ii-wiY"/>
                     </view>
+                    <connections>
+                        <outlet property="swipeImageView" destination="xlI-BP-xsD" id="jME-52-FaO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ue-bP-l0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-948" y="1224"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome Three View Controller-->
         <scene sceneID="kzu-4I-Wpl">
             <objects>
-                <viewController storyboardIdentifier="onboardScreen3" id="Piv-S0-tBR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardScreen3" id="Piv-S0-tBR" customClass="WelcomeThreeViewController" customModule="OthersMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Guy-G8-EUj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,6 +352,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l3c-10-zex"/>
                     </view>
+                    <connections>
+                        <outlet property="swipeImageView" destination="Hn0-E0-lZ4" id="Jgq-Es-iJE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2A-Aj-JzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

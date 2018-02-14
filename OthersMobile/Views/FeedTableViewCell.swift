@@ -20,6 +20,8 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     
+    var feedVC: FeedViewController?
+    
     var post: Post? {
         didSet {
             updateView()
@@ -51,10 +53,19 @@ class FeedTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Create tap gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.commentImageViewPressed))
+        commentImageView.addGestureRecognizer(tapGesture)
+        commentImageView.isUserInteractionEnabled = true
+        
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
         nameLabel.text = ""
         captionLabel.text = ""
+    }
+    
+    @objc func commentImageViewPressed() {
+        feedVC?.performSegue(withIdentifier: "CommentSegue", sender: nil)
     }
     
     override func prepareForReuse() {

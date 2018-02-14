@@ -54,12 +54,6 @@ class FeedViewController: UIViewController {
             }
         })
     }
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "CommentSegue", sender: nil)
-    }
-    
-
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
@@ -74,6 +68,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let user = users[indexPath.row]
         cell.post = post
         cell.user = user
+        cell.feedVC = self
         return cell
     }
     

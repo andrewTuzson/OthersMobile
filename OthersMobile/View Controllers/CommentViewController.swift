@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class CommentViewController: UIViewController {
+class CommentViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var sendCommentButton: UIButton!
@@ -23,6 +23,7 @@ class CommentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        commentTextField.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -38,20 +39,29 @@ class CommentViewController: UIViewController {
         loadComments()
     }
     
+    // MARK: Dismiss Keyboard on touch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // MARK: Dismiss keyboard when user taps anywhere on screen
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        print(notification)
         let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         UIView.animate(withDuration: 0.3) {
-            self.constraintToBottom.constant = keyboardFrame!.height
+            self.view.frame.origin.y -= keyboardFrame!.height
             self.view.layoutIfNeeded()
-            
         }
     }
     @objc func keyboardWillHide(_ notification: NSNotification) {
+        let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         UIView.animate(withDuration: 0.3) {
-            self.constraintToBottom.constant = 0
+            self.view.frame.origin.y += keyboardFrame!.height
             self.view.layoutIfNeeded()
-            
         }
     }
     

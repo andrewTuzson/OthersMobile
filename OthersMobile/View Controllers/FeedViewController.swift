@@ -33,7 +33,7 @@ class FeedViewController: UIViewController {
         activityIndicatorView.stopAnimating()
         Database.database().reference().child("posts").observe(.childAdded) { (snapshot: DataSnapshot) in
             if let dict = snapshot.value as? [String: Any] {
-                let newPost = Post.transformPost(dict: dict)
+                let newPost = Post.transformPost(dict: dict, key: snapshot.key)
                 self.fetchUser(uid: newPost.uid!, completed: {
                     self.posts.append(newPost)
                     self.activityIndicatorView.stopAnimating()
@@ -53,6 +53,14 @@ class FeedViewController: UIViewController {
                 completed()
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CommentSegue" {
+            let commentVC = segue.destination as! CommentViewController
+            let postId = sender as! String
+            commentVC.postId = postId
+        }
     }
 }
 

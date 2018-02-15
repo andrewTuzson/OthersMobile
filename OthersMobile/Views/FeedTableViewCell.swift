@@ -65,7 +65,9 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     @objc func commentImageViewPressed() {
-        feedVC?.performSegue(withIdentifier: "CommentSegue", sender: nil)
+        if let id = post?.id {
+            feedVC?.performSegue(withIdentifier: "CommentSegue", sender: id)
+        }
     }
     
     override func prepareForReuse() {

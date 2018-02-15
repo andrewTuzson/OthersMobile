@@ -17,12 +17,13 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var constraintToBottom: NSLayoutConstraint!
     
-    let postId = "placeholder_reference"
+    var postId: String!
     var comments = [Comment]()
     var users = [UserModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Comments"
         commentTextField.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100

@@ -11,6 +11,11 @@
 		8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C772029CF8200FF504D /* ProgressHUD.m */; };
 		8A130C7A2029CF8300FF504D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A130C782029CF8200FF504D /* ProgressHUD.bundle */; };
 		8A130C7E202B16F300FF504D /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A130C7D202B16F300FF504D /* AddPostViewController.swift */; };
+		8A68BA6D20383DA7001891F0 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BA6C20383DA7001891F0 /* PostAPI.swift */; };
+		8A68BA6F203840E0001891F0 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BA6E203840E0001891F0 /* UserAPI.swift */; };
+		8A68BA7120384569001891F0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BA7020384569001891F0 /* API.swift */; };
+		8A68BA7320384678001891F0 /* CommentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BA7220384678001891F0 /* CommentAPI.swift */; };
+		8A68BA7520384A60001891F0 /* Post_CommentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BA7420384A60001891F0 /* Post_CommentAPI.swift */; };
 		8A69F10320287FA90026FBFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10220287FA90026FBFC /* SearchViewController.swift */; };
 		8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10420287FB20026FBFC /* AddSpotViewController.swift */; };
 		8A69F10720287FB80026FBFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69F10620287FB80026FBFC /* ProfileViewController.swift */; };
@@ -46,6 +51,11 @@
 		8A130C772029CF8200FF504D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		8A130C782029CF8200FF504D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		8A130C7D202B16F300FF504D /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		8A68BA6C20383DA7001891F0 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
+		8A68BA6E203840E0001891F0 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		8A68BA7020384569001891F0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8A68BA7220384678001891F0 /* CommentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAPI.swift; sourceTree = "<group>"; };
+		8A68BA7420384A60001891F0 /* Post_CommentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_CommentAPI.swift; sourceTree = "<group>"; };
 		8A69F10220287FA90026FBFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8A69F10420287FB20026FBFC /* AddSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotViewController.swift; sourceTree = "<group>"; };
 		8A69F10620287FB80026FBFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +148,11 @@
 				8A8698082025CD9C0089ADBD /* AppDelegate.swift */,
 				8A69F10A2029B9E50026FBFC /* AuthServices.swift */,
 				8A130C732029C9ED00FF504D /* Config.swift */,
+				8A68BA7020384569001891F0 /* API.swift */,
+				8A68BA6C20383DA7001891F0 /* PostAPI.swift */,
+				8A68BA6E203840E0001891F0 /* UserAPI.swift */,
+				8A68BA7220384678001891F0 /* CommentAPI.swift */,
+				8A68BA7420384A60001891F0 /* Post_CommentAPI.swift */,
 				8A8B065D202F8349009AC291 /* Views */,
 				8ABD0355202CCB8B00BC7568 /* Model */,
 				8A69F1082029B9840026FBFC /* View Controllers */,
@@ -336,6 +351,7 @@
 				8A69F10320287FA90026FBFC /* SearchViewController.swift in Sources */,
 				8A86981F2025DA430089ADBD /* CreateAccountViewController.swift in Sources */,
 				8A86981D2025DA3B0089ADBD /* LoginViewController.swift in Sources */,
+				8A68BA6F203840E0001891F0 /* UserAPI.swift in Sources */,
 				8AAE94BA20332DFD00C954AE /* WelcomeThreeViewController.swift in Sources */,
 				8A69F10520287FB20026FBFC /* AddSpotViewController.swift in Sources */,
 				8ABD0357202CCB9A00BC7568 /* Post.swift in Sources */,
@@ -349,10 +365,14 @@
 				8AC74E882031A8840005E7BE /* CommentViewController.swift in Sources */,
 				8A130C792029CF8300FF504D /* ProgressHUD.m in Sources */,
 				8A8B065C202F8343009AC291 /* FeedTableViewCell.swift in Sources */,
+				8A68BA6D20383DA7001891F0 /* PostAPI.swift in Sources */,
 				8A69F10B2029B9E50026FBFC /* AuthServices.swift in Sources */,
 				8A130C742029C9ED00FF504D /* Config.swift in Sources */,
+				8A68BA7520384A60001891F0 /* Post_CommentAPI.swift in Sources */,
 				8A69F10720287FB80026FBFC /* ProfileViewController.swift in Sources */,
 				8AC74E86203062E40005E7BE /* UserModel.swift in Sources */,
+				8A68BA7120384569001891F0 /* API.swift in Sources */,
+				8A68BA7320384678001891F0 /* CommentAPI.swift in Sources */,
 				8A8698092025CD9C0089ADBD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

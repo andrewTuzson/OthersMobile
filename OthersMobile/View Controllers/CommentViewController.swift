@@ -77,30 +77,23 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func loadComments() {
-        let postCommentRef = Database.database().reference().child("post-comments").child(self.postId)
-        postCommentRef.observe(.childAdded, with: {
+        API.Post_Comments.REF_POST_COMMENTS.child(self.postId).observe(.childAdded, with: {
             snapshot in
-            Database.database().reference().child("comments").child(snapshot.key).observeSingleEvent(of: .value, with: {
-                snapshotComment in
-                if let dict = snapshotComment.value as? [String: Any] {
-                    let newComment = Comment.transformComment(dict: dict)
-                    self.fetchUser(uid: newComment.uid!, completed: {
-                        self.comments.append(newComment)
-                        self.tableView.reloadData()
-                    })
-                }
+            API.Comment.observeComments(withPostId: snapshot.key, completion: {
+                comment in
+                self.fetchUser(uid: comment.uid!, completed: {
+                    self.comments.append(comment)
+                    self.tableView.reloadData()
+                })
             })
         })
     }
     
     func fetchUser(uid: String, completed: @escaping () -> Void ) {
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String: Any] {
-                let user = UserModel.transformUser(dict: dict)
-                self.users.append(user)
-                completed()
-            }
+        API.User.observeUser(withId: uid, completion: {
+            user in
+            self.users.append(user)
+            completed()
         })
     }
     
@@ -122,7 +115,7 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
     // MARK: IBActions
     @IBAction func sendButtonPressed(_ sender: Any) {
         let ref = Database.database().reference()
-        let commentReference = ref.child("comments")
+        let commentReference = API.Comment.REF_COMMENTS
         let newCommentID = commentReference.childByAutoId().key
         let newCommentReference = commentReference.child(newCommentID)
         guard let currentUser = Auth.auth().currentUser else {
@@ -137,7 +130,7 @@ class CommentViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             
-            let postCommentRef = Database.database().reference().child("post-comments").child(self.postId).child(newCommentID)
+            let postCommentRef = API.Post_Comments.REF_POST_COMMENTS.child(self.postId).child(newCommentID)
             self.empty()
             postCommentRef.setValue(true, withCompletionBlock: { (error, ref) in
                 if error != nil {

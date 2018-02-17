@@ -31,27 +31,23 @@ class FeedViewController: UIViewController {
 
     func loadPosts() {
         activityIndicatorView.stopAnimating()
-        Database.database().reference().child("posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-            if let dict = snapshot.value as? [String: Any] {
-                let newPost = Post.transformPost(dict: dict, key: snapshot.key)
-                self.fetchUser(uid: newPost.uid!, completed: {
-                    self.posts.append(newPost)
-                    self.activityIndicatorView.stopAnimating()
-                    self.tableView.reloadData()
-                })
+        API.Post.observePosts { (post) in
+            guard let postId = post.uid else {
+                return
             }
+            self.fetchUser(uid: postId, completed: {
+                self.posts.append(post)
+                self.activityIndicatorView.stopAnimating()
+                self.tableView.reloadData()
+            })
         }
-        
     }
     
     func fetchUser(uid: String, completed: @escaping () -> Void ) {
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String: Any] {
-                let user = UserModel.transformUser(dict: dict)
-                self.users.append(user)
-                completed()
-            }
+        API.User.observeUser(withId: uid, completion: {
+            user in
+            self.users.append(user)
+            completed()
         })
     }
     
